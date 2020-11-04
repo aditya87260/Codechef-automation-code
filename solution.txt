@@ -1,0 +1,54 @@
+#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <queue>
+#include <algorithm>
+#include <stack>
+#include <iomanip>
+#include <fstream>
+#include <string>
+#include <cstdlib>
+#include <utility>
+#include <ctime>
+#include <cmath>
+
+using namespace std;
+
+typedef long long ll;
+typedef unsigned long long ull;
+#define fi first
+#define sec second
+#define FOR(s,e) for(ll i=s;i<e;i++)
+#define MOD 1000000007
+
+void solve();
+
+int main() {
+    ios::sync_with_stdio(0);
+	cin.tie(NULL);
+    ll t;
+	cin >> t;
+	while(t--)
+	    solve();
+	return 0;
+}
+
+void solve(){
+    ll n;
+    cin >> n; n++;
+    ll arr[n];
+    FOR(0,n)
+        cin >> arr[i];
+    ll ans=0,p=1,k=2*arr[0];
+    FOR(1,n){
+        ans=(2*ans+k*arr[i])%MOD;
+        p=(p*2)%MOD;
+        k=(k+arr[i]*p)%MOD;
+    }
+    cout << ans << endl;
+}
+
+
+
+
+
